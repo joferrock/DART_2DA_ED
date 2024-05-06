@@ -24,7 +24,7 @@ main() {
 
   /// Asignación /= (divide el valor de la variable a la variable)
   var f = (10).toDouble();
-  f /= 0;
+  f /= 2;
 
   /// Cuatro decimales
   print(f.toStringAsFixed(4));
