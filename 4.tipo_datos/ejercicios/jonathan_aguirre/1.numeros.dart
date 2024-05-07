@@ -1,4 +1,4 @@
-void main() {
+ main() {
   /// numeros enteros
   int numeroEntero = 5;
 
