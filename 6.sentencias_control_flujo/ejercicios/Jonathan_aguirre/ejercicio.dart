@@ -18,6 +18,14 @@ main() {
 
   final operaciones = [suma, resta, multiplicacion, division];
   int? operacion = int.tryParse(stdin.readLineSync() ?? '');
+
+  if (operacion == null || !operaciones.contains(operacion)) {
+    print('La operación "$operacion" no es una operación valida.');
+    print("Por favor intente nuevamente: ");
+
+    operacion = int.tryParse(stdin.readLineSync() ?? '1') ?? 1;
+  }
+  
     if (operacion == 1){
     print("Usted ha seleccionado SUMA");
     } else if (operacion == 2){
@@ -27,13 +35,6 @@ main() {
     } else if (operacion == 4){
     print("Usted ha seleccionado División");
     }
-
-  if (operacion == null || !operaciones.contains(operacion)) {
-    print('La operación "$operacion" no es una operación valida.');
-    print("Por favor intente nuevamente: ");
-
-    operacion = int.tryParse(stdin.readLineSync() ?? '1') ?? 1;
-  }
 
   print("Vamos a comenzar, ingresa un número");
 
@@ -74,15 +75,23 @@ main() {
   final continuar = stdin.readLineSync();
 
   if(continuar != null && continuar.toLowerCase() == 'si') {
-    print("Seleccione la operación a realizar: ");}
-
+  print("Seleccione la operación a realizar: ");
+  
   print("SUMA ($suma)");
   print("RESTA ($resta)");
   print("MULTIPLICACIÓN ($multiplicacion)");
   print("DIVISIÓN ($division)");
 
- 
+  final operaciones = [suma, resta, multiplicacion, division];
   int? operacion2 = int.tryParse(stdin.readLineSync() ?? '');
+
+  if (operacion2 == null || !operaciones.contains(operacion2)) {
+    print('La operación "$operacion2" no es una operación valida.');
+    print("Por favor intente nuevamente: ");
+
+    operacion2 = int.tryParse(stdin.readLineSync() ?? '1') ?? 1;
+  }
+
     if (operacion2 == 1){
     print("Usted ha seleccionado SUMA");
     } else if (operacion2 == 2){
@@ -92,13 +101,6 @@ main() {
     } else if (operacion2 == 4){
     print("Usted ha seleccionado División");
     }
-
-  if (operacion2 == null || !operaciones.contains(operacion2)) {
-    print('La operación "$operacion2" no es una operación valida.');
-    print("Por favor intente nuevamente: ");
-
-    operacion2 = int.tryParse(stdin.readLineSync() ?? '1') ?? 1;
-  }
 
   print("Vamos a continuar, ingresa un número");
 
@@ -123,13 +125,11 @@ main() {
   } else if (operacion == 4) {
     resultado2 = resultadofinal! / numero3;
     print("$resultadofinal / $numero3 = $resultado2");
+  }  
   }
-      
-  else if (continuar == "NO") {
-  print("Las operaciones han finalizado");
-  print("Gracias por utilizar mi servicio");
+
+  else if (continuar == "NO" && continuar?.toLowerCase() == 'no') {
   }
-  
   print("Las operaciones han finalizado");
   print("Gracias por utilizar mi servicio");
 }
