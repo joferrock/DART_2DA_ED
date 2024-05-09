@@ -13,5 +13,5 @@ void main() {
 
   String saludo(Function callback){
     callback();
-    return"";
+    return"2";
   }
