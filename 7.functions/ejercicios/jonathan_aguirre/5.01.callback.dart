@@ -3,7 +3,7 @@ void main() {
   saludo(callbackFuncion);
 
   saludo((){
-    print("cualquier cosa");º
+    print("cualquier cosa");
   });
 }
   String callbackFuncion(){
